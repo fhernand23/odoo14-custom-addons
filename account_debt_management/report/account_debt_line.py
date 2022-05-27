@@ -349,6 +349,7 @@ class AccountDebtLine(models.Model):
                     am.l10n_latam_document_type_id=dt.id)
             WHERE
                 am.state != 'draft' and
+                am.state != 'cancel' and
                 a.internal_type IN ('payable', 'receivable')
             GROUP BY
                 l.partner_id, am.company_id, l.account_id, l.currency_id,
