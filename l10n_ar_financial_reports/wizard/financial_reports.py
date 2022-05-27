@@ -11,10 +11,6 @@ class FinancialReports(models.TransientModel):
                                     ('ivapurchase', 'Iva Compra')], string="Reporte", default='ivasale')
     date_from = fields.Date (string="Fecha Inicio")
     date_to = fields.Date (string="Fecha Fin")
-    # journal_ids = fields.Many2many('account.journal',
-    #                                'account_report_general_ledger_journal_rel',
-    #                                'account_id', 'journal_id', string='Journals',
-    #                                required=True)
 
     def print_report(self):
         if self.type_report == 'ivasale':
