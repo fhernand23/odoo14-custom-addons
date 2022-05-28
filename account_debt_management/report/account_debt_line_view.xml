@@ -17,11 +17,12 @@
                 <filter string="Facturas Proveedor" domain="[('type', 'in', ['in_invoice','in_refund'])]" name="in_invoice"/>
                 <filter string="Facturas Cliente" domain="[('type', 'in', ['out_invoice','out_refund'])]" name="out_invoice"/>
                 <filter string="Sin conciliar" domain="[('full_reconcile_id', '=', False), ('reconciled','=',False), ('account_id.reconcile','=',True)]" help="Unreconciled Journal Items" name="unreconciled"/>
-                <filter string="Unreconciled on currency" domain="[('amount_residual_currency', '!=', 0.0), ('amount_residual', '=', 0.0), ('full_reconcile_id', '=', False)]" help="Items saldados en moneda de la compañía pero no saldados en la moneda secundaria" name="currency_unreconciled"/>
+                <filter string="Pendientes" domain="[('amount_residual', '!=', 0.0)]" help="Without 0 amount residual" name="non_zero"/>
+                <!-- <filter string="Unreconciled on currency" domain="[('amount_residual_currency', '!=', 0.0), ('amount_residual', '=', 0.0), ('full_reconcile_id', '=', False)]" help="Items saldados en moneda de la compañía pero no saldados en la moneda secundaria" name="currency_unreconciled"/> -->
                 <group expand="0" string="Group By...">
                     <filter name="internal_type" string="Tipo" context="{'group_by': 'internal_type'}"/>
                     <filter name="date" string="Fecha" context="{'group_by': 'date'}"/>
-		    <filter name="partner_id" string="Cliente/Proveedor" context="{'group_by': 'partner_id'}"/>
+		            <filter name="partner_id" string="Cliente/Proveedor" context="{'group_by': 'partner_id'}"/>
                     <filter name="document_type_id" string="Tipo de Documento" context="{'group_by': 'document_type_id'}"/>
                     <filter name="account_id" string="Cuenta Contable" context="{'group_by': 'account_id'}"/>
                     <filter name="company_id" string="Empresa" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
@@ -134,7 +135,7 @@
         <field name="name">Deudas</field>
         <field name="res_model">account.debt.line</field>
         <field name="view_mode">tree,form,graph</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_non_zero': 1}</field>
     </record>
 
 
