@@ -11,17 +11,6 @@ C - Candidate D - InDev
 ### https://github.com/OCA/server-ux
 - date_range
 
-### https://github.com/OCA/account-financial-reporting TODO delete prd
-- account_financial_report (NOT installed) TODO delete prd
-
-### https://github.com/odoomates/odooapps
-- accounting_pdf_reports
-C om_rh_payroll
-C om_rh_payroll_account
-C om_account_budget
-
-### C https://github.com/OCA/payroll
-
 ### https://github.com/codize-app/odoo-argentina
 - account_check
 - account_debt_management
@@ -41,3 +30,18 @@ C om_account_budget
 - l10n_ar_sale (NOT installed)
 - l10n_ar_taxes
 - l10n_ar_withholding (NOT installed)
+
+### https://github.com/odoomates/odooapps
+- accounting_pdf_reports
+- C om_account_budget
+
+### https://github.com/nimarosa/payroll forked from https://github.com/OCA/payroll
+- C hr_payroll_cancel
+- C payroll
+- C payroll_account
+
+### https://github.com/nimarosa/hr forked from https://github.com/OCA/hr
+- demasiadas opciones
+
+### https://github.com/fhernand23/odoo-open-academy
+- open_academy
